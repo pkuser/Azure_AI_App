@@ -258,6 +258,7 @@ class _AzureSearchSettings(BaseSettings, DatasourcePayloadConstructor):
     endpoint_suffix: str = Field(default="search.windows.net", exclude=True)
     index: str = Field(serialization_alias="index_name")
     key: Optional[str] = Field(default=None, exclude=True)
+    scoring_profile: Optional[str] = Field(default="scoreBoost", alias="scoringProfile")
     use_semantic_search: bool = Field(default=False, exclude=True)
     semantic_search_config: str = Field(default="", serialization_alias="semantic_configuration")
     content_columns: Optional[List[str]] = Field(default=None, exclude=True)
